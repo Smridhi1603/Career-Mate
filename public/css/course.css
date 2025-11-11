@@ -1,0 +1,100 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  background: #1e3a8a;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar .nav-links a {
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar .nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Container */
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+/* Course Card */
+.course-card {
+  max-width: 800px;
+  width: 100%;
+  background: #f8fafc;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+}
+
+.course-card h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #1e3a8a;
+}
+
+.course-card p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: #334155;
+}
+
+.course-card ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.course-card ul li {
+  margin-bottom: 8px;
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+/* Footer */
+.footer {
+  background: #1e3a8a;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  margin-top: 30px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar .nav-links {
+    margin-top: 10px;
+  }
+
+  .course-card h1 {
+    font-size: 1.5rem;
+  }
+}

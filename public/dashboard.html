@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Career Mate : Dashboard</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <p class="m-0 fw-bold" style="font-size: 25px;">Career<span
+                    style="color: royalblue;">Mate</span></p>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="courses.html" class="nav-item nav-link">Courses</a>
+                <a href="dashboard.html" class="nav-item nav-link">Dashboard</a>
+                <a href="study-assistant.html" class="nav-item nav-link">AI Assistant</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="team.html" class="dropdown-item">Our Team</a>
+
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="login.html" class="nav-item nav-link">Login</a>
+                <a href="signup.html" class="nav-item nav-link">Signup</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">My Dashboard</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Dashboard</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Dashboard Content Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center px-3">My Learning</h6>
+                <h1 class="mb-5" style="color: royalblue;">Enrolled Courses</h1>
+            </div>
+
+            <!-- User Welcome Section -->
+            <div class="row g-4 mb-5">
+                <div class="col-12">
+                    <div class="alert alert-info" role="alert">
+                        <h4 class="alert-heading" id="welcomeMessage">Welcome to your Dashboard!</h4>
+                        <p>Here you can view all the courses you've enrolled in and track your learning progress.</p>
+                        <hr>
+                        <p class="mb-0">Total Enrolled Courses: <span id="totalCourses">0</span></p>
+                        <hr>
+                        <div id="dailyQuote" class="alert alert-secondary mt-3">
+                            <em>Fetching your daily tech quote...</em>
+                        </div>
+                        <button onclick="refreshDashboard()" class="btn btn-sm btn-outline-primary">🔄 Refresh Courses</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Access Cards -->
+            <div class="row g-4 mb-4">
+                <div class="col-lg-6">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-robot me-2 text-primary"></i>AI Study Assistant</h5>
+                            <p class="card-text">Ask questions and get instant answers with audio support</p>
+                            <a href="study-assistant.html" class="btn btn-primary">
+                                <i class="fas fa-comments me-2"></i>Chat with AI
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-user-cog me-2"></i>Profile Settings</h5>
+                            <p class="card-text">Update your profile photo, email, or password</p>
+                            <a href="profile.html" class="btn btn-primary">
+                                <i class="fas fa-cog me-2"></i>Manage Profile
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enrolled Courses Grid -->
+            <div class="row g-4" id="enrolledCoursesContainer">
+                <!-- Courses will be loaded dynamically here -->
+                <div class="col-12 text-center">
+                    <p>Loading your enrolled courses...</p>
+                </div>
+            </div>
+
+
+            <!-- No Courses Message (hidden by default) -->
+            <div class="row g-4" id="noCoursesMessage" style="display: none;">
+                <div class="col-12 text-center">
+                    <div class="alert alert-warning" role="alert">
+                        <h5>No courses enrolled yet!</h5>
+                        <p>Start your learning journey by enrolling in some courses.</p>
+                        <a href="courses.html" class="btn btn-primary">Browse Courses</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Dashboard Content End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Quick Link</h4>
+                    <p><a class="text-light" href="about.html">About Us</a></p>
+                    <p><a class="text-light" href="contact.html">Contact Us</a></p>
+                    <p><a class="text-light" href="">Privacy Policy</a></p>
+                    <p><a class="text-light" href="">Terms & Condition</a></p>
+                    <p><a class="text-light" href="">FAQs & Help</a></p>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Chitkara University</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 8120800786</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>tanishach2005@gmail.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="js/navbar.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/init.js"></script>
+    
+    <!-- Enrollment Management -->
+    <script src="js/enrollment.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+            console.log('📋 Dashboard: Checking authentication...');
+            
+            try {
+                // Check authentication via MongoDB API
+                const response = await fetch('/api/auth/me');
+                const userData = await response.json();
+                
+                if (!userData.loggedIn) {
+                    console.log('❌ User not authenticated, redirecting to login...');
+                    alert('Please login to access dashboard');
+                    window.location.href = 'login.html';
+                    return;
+                }
+                
+                console.log('✅ User authenticated:', userData.username);
+                
+                // Update welcome message
+                document.getElementById('welcomeMessage').textContent = `Welcome, ${userData.username}!`;
+                
+                // Display enrolled courses using enrollment.js function
+                console.log('📋 Dashboard: Loading enrolled courses...');
+                
+                // Call the displayDashboardCourses function from enrollment.js
+                // Add a small delay to ensure all elements are ready
+                setTimeout(async () => {
+                    if (typeof window.displayDashboardCourses === 'function') {
+                        console.log('✅ Calling displayDashboardCourses function...');
+                        await window.displayDashboardCourses();
+                    } else {
+                        console.error('❌ displayDashboardCourses function not found!');
+                        // Fallback: manually load enrolled courses
+                        await loadEnrolledCoursesManually();
+                    }
+                    
+                    // Add event listeners to unenroll buttons after courses are loaded
+                    setTimeout(() => {
+                        if (typeof addUnenrollListeners === 'function') {
+                            addUnenrollListeners();
+                        }
+                    }, 200);
+                }, 500);
+                
+            } catch (error) {
+                console.error('❌ Dashboard authentication error:', error);
+                alert('Error checking authentication. Please login.');
+                window.location.href = 'login.html';
+            }
+        });
+
+        // Fallback function to load enrolled courses if enrollment.js fails
+        async function loadEnrolledCoursesManually() {
+            console.log('🔄 Loading enrolled courses manually...');
+            const container = document.getElementById('enrolledCoursesContainer');
+            const total = document.getElementById('totalCourses');
+            
+            try {
+                // Get enrolled courses from API
+                const response = await fetch('/api/courses/enrolled');
+                const data = await response.json();
+                const enrolledCourses = data.enrolledCourses || [];
+                
+                console.log('📋 Enrolled courses from API:', enrolledCourses);
+                
+                if (!enrolledCourses.length) {
+                    container.innerHTML = '<div class="col-12 text-center alert alert-info">No courses enrolled yet. <a href="courses.html">Browse courses</a></div>';
+                    if (total) total.textContent = '0';
+                    return;
+                }
+                
+                // Course information mapping
+                const COURSE_INFO = {
+                    html: { title: 'HTML Course for Beginners', image: 'img/course-1.jpg', description: 'Learn the basics of HTML' },
+                    css: { title: 'Front End Development - CSS', image: 'img/course-2.jpg', description: 'Master CSS styling techniques' },
+                    javascript: { title: 'Introduction to JavaScript', image: 'img/course-3.jpg', description: 'Learn JavaScript programming' },
+                    python: { title: 'Python Programming', image: 'img/course-4.jpg', description: 'Python from scratch' },
+                    sql: { title: 'SQL Database', image: 'img/course-5.jpg', description: 'Database management with SQL' }
+                };
+                
+                // Build courses HTML
+                container.innerHTML = enrolledCourses.map(courseId => {
+                    const course = COURSE_INFO[courseId] || { 
+                        title: courseId.charAt(0).toUpperCase() + courseId.slice(1) + ' Course', 
+                        image: 'img/course-1.jpg', 
+                        description: 'Course description not available' 
+                    };
+                    
+                    return `
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <img src="${course.image}" class="card-img-top" style="height:200px;object-fit:cover" alt="${course.title}">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">${course.title}</h5>
+                                    <p class="card-text flex-grow-1">${course.description}</p>
+                                    <div class="d-flex justify-content-between align-items-center mt-auto">
+                                        <a href="learn.html?id=${courseId}" class="btn btn-primary btn-sm">Continue Learning</a>
+                                        <div>
+                                            <span class="badge bg-success me-2">✓ Enrolled</span>
+                                            <button onclick="unenrollFromCourse('${courseId}')" class="btn btn-outline-danger btn-sm" title="Unenroll">
+                                                <i class="fa fa-times"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+                
+                if (total) total.textContent = enrolledCourses.length;
+                
+                console.log('✅ Enrolled courses displayed successfully');
+                
+            } catch (error) {
+                console.error('❌ Error loading enrolled courses:', error);
+                container.innerHTML = '<div class="col-12 text-center alert alert-danger">Error loading enrolled courses. Please refresh the page.</div>';
+            }
+        }
+        
+        // Refresh dashboard function
+        async function refreshDashboard() {
+            console.log('🔄 Manual dashboard refresh triggered');
+            
+            const container = document.getElementById('enrolledCoursesContainer');
+            container.innerHTML = '<div class="col-12 text-center"><div class="spinner-border text-primary" role="status"><span class="sr-only">Loading...</span></div><p class="mt-2">Refreshing courses...</p></div>';
+            
+            if (typeof window.displayDashboardCourses === 'function') {
+                await window.displayDashboardCourses();
+            } else {
+                await loadEnrolledCoursesManually();
+            }
+        }
+        
+        // Global unenroll function for dashboard buttons
+        window.unenrollFromCourse = async function(courseId) {
+            console.log('🎯 Dashboard unenroll called for:', courseId);
+            
+            try {
+                // Check if user is logged in
+                const authResponse = await fetch('/api/auth/me');
+                const authData = await authResponse.json();
+                
+                if (!authData.loggedIn) {
+                    alert('Please login to manage your enrollments');
+                    window.location.href = 'login.html';
+                    return;
+                }
+                
+                // Confirm unenrollment
+                if (!confirm('Are you sure you want to unenroll from this course?')) {
+                    console.log('🚫 User cancelled unenrollment');
+                    return;
+                }
+                
+                console.log('📞 Calling unenroll API...');
+                
+                // Call unenroll API
+                const response = await fetch('/api/courses/unenroll', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ courseId })
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok) {
+                    console.log('✅ Successfully unenrolled from course');
+                    alert('Successfully unenrolled from course!');
+                    
+                    // Refresh the dashboard
+                    await refreshDashboard();
+                } else {
+                    console.error('❌ Unenroll failed:', result.message);
+                    alert(result.message || 'Failed to unenroll from course');
+                }
+                
+            } catch (error) {
+                console.error('❌ Unenrollment error:', error);
+                alert('Network error. Please try again.');
+            }
+        };
+        
+        // Add event listeners to unenroll buttons after they're created
+        function addUnenrollListeners() {
+            console.log('💂 Adding event listeners to unenroll buttons...');
+            
+            const unenrollButtons = document.querySelectorAll('button[onclick*="unenrollFromCourse"]');
+            console.log('🔍 Found unenroll buttons:', unenrollButtons.length);
+            
+            unenrollButtons.forEach((btn, index) => {
+                const onclickAttr = btn.getAttribute('onclick');
+                const courseIdMatch = onclickAttr.match(/unenrollFromCourse\('([^']+)'\)/);
+                
+                if (courseIdMatch) {
+                    const courseId = courseIdMatch[1];
+                    console.log(`🔍 Unenroll button ${index + 1} course ID:`, courseId);
+                    
+                    // Remove onclick and add click listener
+                    btn.removeAttribute('onclick');
+                    btn.addEventListener('click', async function(e) {
+                        console.log('💆 Unenroll button clicked for course:', courseId);
+                        e.preventDefault();
+                        await window.unenrollFromCourse(courseId);
+                    });
+                }
+            });
+        }
+        
+        // Call this function after courses are loaded
+        const originalRefreshDashboard = refreshDashboard;
+        refreshDashboard = async function() {
+            await originalRefreshDashboard();
+            // Add listeners after dashboard is refreshed
+            setTimeout(addUnenrollListeners, 100);
+        };
+
+        // Public API feature: daily tech quote
+        (async function loadDailyQuote() {
+            try {
+                const res = await fetch('https://api.quotable.io/random?tags=technology');
+                const data = await res.json();
+                const el = document.getElementById('dailyQuote');
+                if (data && data.content) {
+                    el.innerHTML = `“${data.content}” — <strong>${data.author}</strong>`;
+                } else {
+                    el.innerHTML = '<em>Stay curious and keep learning.</em>';
+                }
+            } catch (e) {
+                const el = document.getElementById('dailyQuote');
+                if (el) el.innerHTML = '<em>Stay curious and keep learning.</em>';
+            }
+        })();
+
+        // Public API: IP-based greeting
+        (async function greetByCity() {
+            try {
+                const resp = await fetch('https://ipapi.co/json/');
+                const data = await resp.json();
+                if (data && data.city) {
+                    const wm = document.getElementById('welcomeMessage');
+                    wm.textContent += ` — from ${data.city}`;
+                }
+            } catch (_) {}
+        })();
+    </script>
+    
+    <script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/08/31/18/20250831182313-9AG09K81.js" defer></script>
+    
+</body>
+
+</html>
+

@@ -1,0 +1,852 @@
+{
+  "courses": [
+    {
+      "id": "html",
+      "title": "HTML Course for Beginners",
+      "subtitle": "Learn HTML from scratch and start your web development journey",
+      "videoUrl": "https://www.youtube.com/embed/pQN-pnXPaVg",
+      "mainContent": [
+        {
+          "tag": "h2",
+          "content": "What is HTML?"
+        },
+        {
+          "tag": "p",
+          "content": "HTML (<b>HyperText Markup Language</b>) is the standard language used to create web pages. It tells the browser how to display text, images, and other elements. HTML is the backbone of all websites and is the first step to becoming a web developer."
+        },
+        {
+          "tag": "h3",
+          "content": "Basic Structure of an HTML Document"
+        },
+        {
+          "tag": "pre",
+          "content": "&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n    &lt;title&gt;My First HTML Page&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Hello World!&lt;/h1&gt;\n    &lt;p&gt;This is my first HTML webpage.&lt;/p&gt;\n&lt;/body&gt;\n&lt;/html&gt;"
+        },
+        {
+          "tag": "h3",
+          "content": "HTML Elements"
+        },
+        {
+          "tag": "p",
+          "content": "HTML documents are made up of <b>elements</b> that usually have an opening tag, content, and a closing tag."
+        },
+        {
+          "tag": "ul",
+          "items": [
+            "<code>&lt;h1&gt;...&lt;/h1&gt;</code> - Headings",
+            "<code>&lt;p&gt;...&lt;/p&gt;</code> - Paragraph",
+            "<code>&lt;a href=\"url\"&gt;...&lt;/a&gt;</code> - Links",
+            "<code>&lt;img src=\"image.jpg\"&gt;</code> - Images"
+          ]
+        },
+        {
+          "tag": "h3",
+          "content": "Forms in HTML"
+        },
+        {
+          "tag": "p",
+          "content": "Forms allow users to input data."
+        },
+        {
+          "tag": "pre",
+          "content": "&lt;form&gt;\n    &lt;input type=\"text\" placeholder=\"Enter Name\"&gt;&lt;br&gt;\n    &lt;input type=\"email\" placeholder=\"Enter Email\"&gt;&lt;br&gt;\n    &lt;button type=\"submit\"&gt;Submit&lt;/button&gt;\n&lt;/form&gt;"
+        },
+        {
+          "tag": "h3",
+          "content": "Semantic HTML"
+        },
+        {
+          "tag": "p",
+          "content": "HTML5 introduced semantic elements that clearly describe their meaning."
+        },
+        {
+          "tag": "ul",
+          "items": [
+            "<code>&lt;header&gt;</code> - Top section",
+            "<code>&lt;nav&gt;</code> - Navigation menu",
+            "<code>&lt;article&gt;</code> - Article content",
+            "<code>&lt;footer&gt;</code> - Footer section"
+          ]
+        }
+      ],
+      "sidebar": {
+        "level": "Beginner",
+        "instructor": "Career Mate Team and AI",
+        "includes": [
+          "Video Lessons",
+          "AI Generated Practice Exercises",
+          "Downloadable Notes",
+          "Final Project"
+        ]
+      }
+    },
+    {
+      "id": "css",
+      "title": "Front End Development - CSS",
+      "subtitle": "Style your web pages beautifully with CSS",
+      "videoUrl": "https://www.youtube.com/embed/1Rs2ND1ryYc",
+      "mainContent": [
+        {
+          "tag": "h2",
+          "content": "What is CSS?"
+        },
+        {
+          "tag": "p",
+          "content": "CSS (<b>Cascading Style Sheets</b>) is used to style and layout web pages — for example, to change fonts, colors, spacing, and positioning of HTML elements. CSS makes your website look attractive and user-friendly."
+        },
+        {
+          "tag": "h3",
+          "content": "How CSS Works"
+        },
+        {
+          "tag": "p",
+          "content": "CSS works by selecting HTML elements and applying styles to them. These styles are applied using selectors and properties."
+        },
+        {
+          "tag": "h3",
+          "content": "Types of CSS"
+        },
+        {
+          "tag": "ul",
+          "items": [
+            "<b>Inline CSS</b> - Styles applied directly inside the HTML tag.",
+            "<b>Internal CSS</b> - Styles written inside a <code>&lt;style&gt;</code> tag in the HTML file.",
+            "<b>External CSS</b> - Styles written in a separate <code>.css</code> file and linked to the HTML file."
+          ]
+        },
+        {
+          "tag": "pre",
+          "content": "/* Example External CSS */\nbody {\n    background-color: #f0f0f0;\n    font-family: Arial, sans-serif;\n}\nh1 {\n    color: royalblue;\n    text-align: center;\n}"
+        },
+        {
+          "tag": "h3",
+          "content": "Selectors in CSS"
+        },
+        {
+          "tag": "ul",
+          "items": [
+            "<code>p</code> - Selects all paragraph elements.",
+            "<code>.classname</code> - Selects elements with a specific class.",
+            "<code>#idname</code> - Selects an element with a specific ID.",
+            "<code>*</code> - Selects all elements."
+          ]
+        },
+        {
+          "tag": "h3",
+          "content": "Box Model"
+        },
+        {
+          "tag": "p",
+          "content": "The CSS box model describes how the size of an element is calculated: <b>content, padding, border, margin</b>."
+        },
+        {
+          "tag": "pre",
+          "content": "div {\n    width: 200px;\n    padding: 20px;\n    border: 5px solid black;\n    margin: 10px;\n}"
+        },
+        {
+          "tag": "h3",
+          "content": "CSS Layout Techniques"
+        },
+        {
+          "tag": "ul",
+          "items": [
+            "<b>Flexbox</b> - Flexible layouts.",
+            "<b>Grid</b> - Two-dimensional layouts.",
+            "<b>Positioning</b> - Absolute, relative, fixed, sticky."
+          ]
+        }
+      ],
+      "sidebar": {
+        "level": "Beginner to Intermediate",
+        "instructor": "Career Mate Team and AI",
+        "includes": [
+          "Video Lessons",
+          "AI Generated Practice Exercises",
+          "Downloadable Notes",
+          "Final Project"
+        ]
+      }
+    },
+    {
+      "id": "python",
+      "title": "Python Programming",
+      "subtitle": "Learn one of the most popular programming languages in the world",
+      "videoUrl": "https://www.youtube.com/embed/rfscVS0vtbw",
+      "mainContent": [
+        {
+          "tag": "h2",
+          "content": "What is Python?"
+        },
+        {
+          "tag": "p",
+          "content": "Python is a high-level, interpreted programming language known for its simplicity and readability. It’s widely used in web development, data science, artificial intelligence, automation, and more."
+        },
+        {
+          "tag": "h3",
+          "content": "Why Learn Python?"
+        },
+        {
+          "tag": "ul",
+          "items": [
+            "Easy to learn and beginner-friendly.",
+            "Versatile — used in web, AI, data science, and automation.",
+            "Huge community support.",
+            "High demand in job market."
+          ]
+        },
+        {
+          "tag": "h3",
+          "content": "Your First Python Program"
+        },
+        {
+          "tag": "pre",
+          "content": "# Inside a Python file (example.py)\nprint(\"Hello, Python!\")"
+        },
+        {
+          "tag": "h3",
+          "content": "Python Basics"
+        },
+        {
+          "tag": "ul",
+          "items": [
+            "<b>Variables:</b> Store data values.",
+            "<b>Data Types:</b> String, Integer, Float, Boolean, List, Tuple, Dictionary.",
+            "<b>Operators:</b> +, -, *, /, %, =, ==, etc.",
+            "<b>Functions:</b> Reusable blocks of code."
+          ]
+        },
+        {
+          "tag": "pre",
+          "content": "name = \"John\"  # String\nage = 25       # Integer\nis_student = True  # Boolean\n\ndef greet():\n    print(\"Hello, \" + name)\n\ngreet()  # Output: Hello, John"
+        },
+        {
+          "tag": "h3",
+          "content": "Control Structures"
+        },
+        {
+          "tag": "pre",
+          "content": "score = 85\n\nif score >= 90:\n    print(\"Grade: A\")\nelif score >= 75:\n    print(\"Grade: B\")\nelse:\n    print(\"Grade: C\")"
+        },
+        {
+          "tag": "h3",
+          "content": "Loops"
+        },
+        {
+          "tag": "pre",
+          "content": "for i in range(1, 6):\n    print(\"Number:\", i)"
+        },
+        {
+          "tag": "h3",
+          "content": "Sample Python Compiler"
+        },
+        {
+          "tag": "div",
+          "content": "<div data-pym-src='https://www.jdoodle.com/embed/v1/65ca44b470c203a7'></div>\n<script src='https://www.jdoodle.com/assets/jdoodle-pym.min.js' type='text/javascript'></script>"
+        }
+      ],
+      "sidebar": {
+        "level": "Beginner to Intermediate",
+        "instructor": "Career Mate Team & AI",
+        "includes": [
+          "Interactive Code Examples",
+          "Hands-on Python Projects",
+          "Data Structures & Algorithms",
+          "Python Compiler Access"
+        ]
+      }
+    },
+    {
+      "id": "aws",
+      "title": "AWS for Beginners",
+      "subtitle": "Learn the basics of Amazon Web Services and start your cloud journey",
+      "videoUrl": "https://www.youtube.com/embed/ulprqHHWlng",
+      "mainContent": [
+        {
+          "tag": "h2",
+          "content": "What is AWS?"
+        },
+        {
+          "tag": "p",
+          "content": "Amazon Web Services (AWS) is the world’s most comprehensive and widely used cloud platform, offering over 200 fully featured services from data centers globally. It enables businesses and developers to build, deploy, and manage applications in the cloud with ease."
+        },
+        {
+          "tag": "h3",
+          "content": "Why Learn AWS?"
+        },
+        {
+          "tag": "ul",
+          "items": [
+            "High demand for AWS skills in the job market.",
+            "Used by top companies worldwide.",
+            "Scalable and cost-effective cloud solutions.",
+            "Enables rapid innovation and deployment."
+          ]
+        },
+        {
+          "tag": "h3",
+          "content": "Core AWS Services"
+        },
+        {
+          "tag": "ul",
+          "items": [
+            "<b>EC2 (Elastic Compute Cloud):</b> Virtual servers in the cloud.",
+            "<b>S3 (Simple Storage Service):</b> Secure and scalable storage.",
+            "<b>RDS (Relational Database Service):</b> Managed databases.",
+            "<b>Lambda:</b> Serverless computing service."
+          ]
+        },
+        {
+          "tag": "h3",
+          "content": "Example: Hosting a Website on AWS S3"
+        },
+        {
+          "tag": "pre",
+          "content": "1. Create an S3 bucket in your AWS account.\n2. Upload your website files (HTML, CSS, JS).\n3. Enable static website hosting in the bucket properties.\n4. Make files public and use the provided S3 website URL."
+        },
+        {
+          "tag": "h3",
+          "content": "Career Opportunities"
+        },
+        {
+          "tag": "ul",
+          "items": [
+            "AWS Cloud Engineer",
+            "DevOps Engineer",
+            "Cloud Architect",
+            "Solutions Architect"
+          ]
+        }
+      ],
+      "sidebar": {
+        "level": "Beginner",
+        "instructor": "Career Mate Team",
+        "includes": [
+          "Step-by-step AWS tutorials",
+          "Hands-on cloud projects",
+          "Basic DevOps integration",
+          "Cloud career guidance"
+        ]
+      }
+    },
+    {
+      "id": "javascript",
+      "title": "Introduction to JavaScript",
+      "subtitle": "Make your websites interactive with JavaScript",
+      "videoUrl": "https://www.youtube.com/embed/PkZNo7MFNFg",
+      "mainContent": [
+        {
+          "tag": "h2",
+          "content": "What is JavaScript?"
+        },
+        {
+          "tag": "p",
+          "content": "JavaScript is a programming language used to make web pages interactive. It runs in the browser and allows you to add dynamic features such as form validation, animations, pop-ups, and real-time updates."
+        },
+        {
+          "tag": "h3",
+          "content": "Why Learn JavaScript?"
+        },
+        {
+          "tag": "ul",
+          "items": [
+            "It’s essential for front-end web development.",
+            "Works in all major browsers.",
+            "Can also be used for back-end development (Node.js).",
+            "High demand in the job market."
+          ]
+        },
+        {
+          "tag": "h3",
+          "content": "Your First JavaScript Code"
+        },
+        {
+          "tag": "pre",
+          "content": "&lt;script&gt;\n    alert(\"Hello, JavaScript!\");\n&lt;/script&gt;"
+        },
+        {
+          "tag": "h3",
+          "content": "DOM Manipulation"
+        },
+        {
+          "tag": "p",
+          "content": "JavaScript can change HTML and CSS dynamically using the DOM (Document Object Model)."
+        },
+        {
+          "tag": "pre",
+          "content": "document.getElementById(\"demo\").innerHTML = \"Text changed!\";"
+        },
+        {
+          "tag": "h3",
+          "content": "Events in JavaScript"
+        },
+        {
+          "tag": "p",
+          "content": "JavaScript responds to user actions such as clicks, mouse movements, and keyboard inputs."
+        },
+        {
+          "tag": "pre",
+          "content": "&lt;button onclick=\"alert('Button Clicked!')\"&gt;Click Me&lt;/button&gt;"
+        }
+      ],
+      "sidebar": {
+        "level": "Beginner to Intermediate",
+        "instructor": "Career Mate Team",
+        "includes": [
+          "Interactive Code Examples",
+          "Mini Projects",
+          "DOM Manipulation Exercises",
+          "JavaScript Quiz"
+        ]
+      }
+    },
+    {
+      "id": "chatgpt",
+      "title": "ChatGPT for Beginners",
+      "subtitle": "Learn how to use ChatGPT effectively for learning, work, and creativity",
+      "videoUrl": "https://www.youtube.com/embed/JTxsNm9IdYU",
+      "mainContent": [
+        {
+          "tag": "h2",
+          "content": "What is ChatGPT?"
+        },
+        {
+          "tag": "p",
+          "content": "ChatGPT is an advanced AI language model created by OpenAI. It can understand natural language and generate human-like responses, making it useful for learning, productivity, creativity, and coding assistance."
+        },
+        {
+          "tag": "h3",
+          "content": "Why Learn to Use ChatGPT?"
+        },
+        {
+          "tag": "ul",
+          "items": [
+            "Boosts productivity by generating content, ideas, and code.",
+            "Helps with learning new skills and understanding concepts.",
+            "Useful for writing, research, and brainstorming.",
+            "Can automate repetitive text-related tasks."
+          ]
+        },
+        {
+          "tag": "h3",
+          "content": "Tips for Getting the Best Results"
+        },
+        {
+          "tag": "ul",
+          "items": [
+            "<b>Be specific:</b> Provide detailed instructions in your prompts.",
+            "<b>Break tasks down:</b> Ask step-by-step questions.",
+            "<b>Use examples:</b> Give ChatGPT examples to follow.",
+            "<b>Refine prompts:</b> If the answer isn’t perfect, rephrase your request."
+          ]
+        },
+        {
+          "tag": "h3",
+          "content": "Example Prompts"
+        },
+        {
+          "tag": "pre",
+          "content": "\"Write a 100-word story about a robot learning to paint.\"\n\"Explain recursion in simple terms.\"\n\"Suggest 5 healthy breakfast ideas.\"\n\"Generate HTML code for a basic website.\""
+        },
+        {
+          "tag": "h3",
+          "content": "Practical Uses"
+        },
+        {
+          "tag": "ul",
+          "items": [
+            "Writing emails, blogs, and reports",
+            "Generating programming code and debugging",
+            "Learning new topics quickly",
+            "Creating stories, poems, and creative content"
+          ]
+        }
+      ],
+      "sidebar": {
+        "level": "Beginner",
+        "instructor": "Career Mate Team",
+        "includes": [
+          "Step-by-step ChatGPT tutorials",
+          "Example prompts for different uses",
+          "Creative writing with AI",
+          "Productivity tips with ChatGPT"
+        ]
+      }
+    },
+    {
+      "id": "sql",
+      "title": "SQL for Data Science",
+      "subtitle": "Master SQL to analyze and manage data effectively",
+      "videoUrl": "https://www.youtube.com/embed/HXV3zeQKqGY",
+      "mainContent": [
+        {
+          "tag": "h2",
+          "content": "What is SQL?"
+        },
+        {
+          "tag": "p",
+          "content": "SQL (Structured Query Language) is a standard language used to manage and manipulate relational databases. It is a key skill for data analysis and data science, enabling you to extract insights from datasets."
+        },
+        {
+          "tag": "h3",
+          "content": "Why Learn SQL for Data Science?"
+        },
+        {
+          "tag": "ul",
+          "items": [
+            "Essential for querying and analyzing datasets.",
+            "Used by all major relational databases (MySQL, PostgreSQL, SQL Server, etc.).",
+            "Required for data analyst and data scientist roles.",
+            "Integrates with data visualization tools."
+          ]
+        },
+        {
+          "tag": "h3",
+          "content": "Your First SQL Query"
+        },
+        {
+          "tag": "pre",
+          "content": "-- Select all data from a table\nSELECT * FROM employees;"
+        },
+        {
+          "tag": "h3",
+          "content": "Basic SQL Commands"
+        },
+        {
+          "tag": "ul",
+          "items": [
+            "<b>SELECT:</b> Retrieve data from a table.",
+            "<b>WHERE:</b> Filter results based on a condition.",
+            "<b>ORDER BY:</b> Sort results in ascending or descending order.",
+            "<b>GROUP BY:</b> Group data for aggregation."
+          ]
+        },
+        {
+          "tag": "pre",
+          "content": "-- Filtering data\nSELECT name, salary\nFROM employees\nWHERE salary > 50000;\n\n-- Sorting data\nSELECT name, department\nFROM employees\nORDER BY department ASC;"
+        },
+        {
+          "tag": "h3",
+          "content": "Aggregations"
+        },
+        {
+          "tag": "pre",
+          "content": "-- Counting employees in each department\nSELECT department, COUNT(*) AS employee_count\nFROM employees\nGROUP BY department;"
+        }
+      ],
+      "sidebar": {
+        "level": "Beginner to Intermediate",
+        "instructor": "Career Mate Team & AI",
+        "includes": [
+          "Hands-on SQL Exercises",
+          "Real-World Data Sets",
+          "Practice Projects",
+          "SQL Compiler Access"
+        ]
+      }
+    },
+    {
+      "id": "azure",
+      "title": "Microsoft Azure for Beginners",
+      "subtitle": "Start your cloud journey with Microsoft Azure",
+      "videoUrl": "https://www.youtube.com/embed/2m0lQ9rj9J8",
+      "mainContent": [
+        {
+          "tag": "h2",
+          "content": "What is Microsoft Azure?"
+        },
+        {
+          "tag": "p",
+          "content": "Microsoft Azure is a cloud computing platform that provides a wide range of services such as virtual machines, databases, networking, and AI tools. It allows businesses and developers to build, deploy, and manage applications in the cloud."
+        },
+        {
+          "tag": "h3",
+          "content": "Why Learn Azure?"
+        },
+        {
+          "tag": "ul",
+          "items": [
+            "High demand for Azure cloud professionals.",
+            "Used by enterprises worldwide.",
+            "Helps in hosting, managing, and scaling apps easily.",
+            "Key skill for cloud and DevOps roles."
+          ]
+        },
+        {
+          "tag": "h3",
+          "content": "Core Azure Services"
+        },
+        {
+          "tag": "ul",
+          "items": [
+            "<b>Azure Virtual Machines:</b> Run apps in the cloud.",
+            "<b>Azure Storage:</b> Store and manage files securely.",
+            "<b>Azure SQL Database:</b> Managed relational database.",
+            "<b>Azure Functions:</b> Serverless event-driven apps."
+          ]
+        },
+        {
+          "tag": "h3",
+          "content": "Example: Hosting a Website on Azure"
+        },
+        {
+          "tag": "pre",
+          "content": "1. Create a resource group in Azure.\n2. Deploy an Azure Web App.\n3. Upload your website files.\n4. Access it using the given Azure URL."
+        }
+      ],
+      "sidebar": {
+        "level": "Beginner",
+        "instructor": "Career Mate Team",
+        "includes": [
+          "Step-by-step Azure tutorials",
+          "Hands-on cloud projects",
+          "Azure CLI and Portal",
+          "Career guidance in Cloud Computing"
+        ]
+      }
+    },
+    {
+      "id": "excel",
+      "title": "Introduction to Microsoft Excel",
+      "subtitle": "Master the basics of Excel for productivity and data handling",
+      "videoUrl": "https://www.youtube.com/embed/rwbho0CgEAE",
+      "mainContent": [
+        {
+          "tag": "h2",
+          "content": "What is Microsoft Excel?"
+        },
+        {
+          "tag": "p",
+          "content": "Microsoft Excel is a spreadsheet program that allows you to organize, analyze, and visualize data. It is widely used in businesses, education, and data analysis."
+        },
+        {
+          "tag": "h3",
+          "content": "Why Learn Excel?"
+        },
+        {
+          "tag": "ul",
+          "items": [
+            "Essential for office productivity.",
+            "Helps in analyzing and managing data easily.",
+            "Useful for reporting and dashboards.",
+            "In-demand skill across industries."
+          ]
+        },
+        {
+          "tag": "h3",
+          "content": "Basic Features"
+        },
+        {
+          "tag": "ul",
+          "items": [
+            "Cells and Ranges",
+            "Formulas and Functions (SUM, AVERAGE, IF)",
+            "Charts and Graphs",
+            "Pivot Tables"
+          ]
+        },
+        {
+          "tag": "h3",
+          "content": "Example Formula"
+        },
+        {
+          "tag": "pre",
+          "content": "=SUM(A1:A10)   // Adds values from A1 to A10"
+        }
+      ],
+      "sidebar": {
+        "level": "Beginner",
+        "instructor": "Career Mate Team",
+        "includes": [
+          "Excel practice exercises",
+          "Downloadable spreadsheets",
+          "Business case studies",
+          "Final project on data reporting"
+        ]
+      }
+    },
+    {
+      "id": "statistics",
+      "title": "Statistics for Data Science",
+      "subtitle": "Learn the statistical foundations needed for data analysis and machine learning",
+      "videoUrl": "https://www.youtube.com/embed/xxpc-HPKN28",
+      "mainContent": [
+        {
+          "tag": "h2",
+          "content": "What is Statistics?"
+        },
+        {
+          "tag": "p",
+          "content": "Statistics is the science of collecting, analyzing, and interpreting data. It is a key skill for data scientists, helping them draw insights from datasets."
+        },
+        {
+          "tag": "h3",
+          "content": "Why Learn Statistics for Data Science?"
+        },
+        {
+          "tag": "ul",
+          "items": [
+            "Understand how to analyze real-world data.",
+            "Foundation for machine learning and AI.",
+            "Helps in decision making and predictions.",
+            "Essential for data visualization and interpretation."
+          ]
+        },
+        {
+          "tag": "h3",
+          "content": "Core Topics"
+        },
+        {
+          "tag": "ul",
+          "items": [
+            "Descriptive Statistics (mean, median, mode, variance).",
+            "Probability basics.",
+            "Distributions (Normal, Binomial, Poisson).",
+            "Hypothesis Testing and Confidence Intervals.",
+            "Correlation and Regression."
+          ]
+        },
+        {
+          "tag": "h3",
+          "content": "Example: Mean Calculation"
+        },
+        {
+          "tag": "pre",
+          "content": "Numbers: 2, 4, 6, 8, 10\nMean = (2+4+6+8+10)/5 = 6"
+        }
+      ],
+      "sidebar": {
+        "level": "Beginner to Intermediate",
+        "instructor": "Career Mate Team & AI",
+        "includes": [
+          "Step-by-step explanations",
+          "Real-world datasets",
+          "Practice quizzes",
+          "Data science project with statistics"
+        ]
+      }
+    },
+    {
+      "id": "java",
+      "title": "Java Programming",
+      "subtitle": "Learn the fundamentals of Java programming for beginners",
+      "videoUrl": "https://www.youtube.com/embed/eIrMbAQSU34",
+      "mainContent": [
+        {
+          "tag": "h2",
+          "content": "What is Java?"
+        },
+        {
+          "tag": "p",
+          "content": "Java is a powerful, object-oriented programming language widely used in software development, mobile apps, and backend systems. It is known for its portability and robustness."
+        },
+        {
+          "tag": "h3",
+          "content": "Why Learn Java?"
+        },
+        {
+          "tag": "ul",
+          "items": [
+            "Popular for enterprise software.",
+            "Core language for Android development.",
+            "Strong community support.",
+            "Foundation for advanced technologies like Spring and Hibernate."
+          ]
+        },
+        {
+          "tag": "h3",
+          "content": "Your First Java Program"
+        },
+        {
+          "tag": "pre",
+          "content": "public class HelloWorld {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, Java!\");\n    }\n}"
+        },
+        {
+          "tag": "h3",
+          "content": "Key Concepts"
+        },
+        {
+          "tag": "ul",
+          "items": [
+            "Variables and Data Types",
+            "Control Flow (if, else, loops)",
+            "Methods",
+            "Classes and Objects",
+            "Inheritance, Polymorphism, Encapsulation"
+          ]
+        }
+      ],
+      "sidebar": {
+        "level": "Beginner to Intermediate",
+        "instructor": "Career Mate Team",
+        "includes": [
+          "Interactive coding exercises",
+          "Mini projects",
+          "OOP concepts in depth",
+          "Java compiler access"
+        ]
+      }
+    },
+    {
+      "id": "c",
+      "title": "C Programming for Beginners",
+      "subtitle": "Learn the basics of C programming and build a strong programming foundation",
+      "videoUrl": "https://www.youtube.com/embed/KJgsSFOSQv0",
+      "mainContent": [
+        {
+          "tag": "h2",
+          "content": "What is C?"
+        },
+        {
+          "tag": "p",
+          "content": "C is a general-purpose programming language known as the 'mother of all languages.' It is fast, efficient, and widely used for system programming, embedded systems, and operating systems."
+        },
+        {
+          "tag": "h3",
+          "content": "Why Learn C?"
+        },
+        {
+          "tag": "ul",
+          "items": [
+            "Helps understand how computers work at a low level.",
+            "Foundation for C++, Java, and other languages.",
+            "Used in embedded systems and OS development.",
+            "Efficient and portable."
+          ]
+        },
+        {
+          "tag": "h3",
+          "content": "Your First C Program"
+        },
+        {
+          "tag": "pre",
+          "content": "#include <stdio.h>\nint main() {\n    printf(\"Hello, C!\\n\");\n    return 0;\n}"
+        },
+        {
+          "tag": "h3",
+          "content": "Key Concepts"
+        },
+        {
+          "tag": "ul",
+          "items": [
+            "Variables and Data Types",
+            "Operators",
+            "Control Flow (if, else, loops)",
+            "Functions",
+            "Pointers and Arrays",
+            "Memory Management (malloc, free)"
+          ]
+        }
+      ],
+      "sidebar": {
+        "level": "Beginner",
+        "instructor": "Career Mate Team",
+        "includes": [
+          "Code examples and exercises",
+          "Hands-on C mini projects",
+          "Debugging practice",
+          "Downloadable C notes"
+        ]
+      }
+    }
+  ]
+}

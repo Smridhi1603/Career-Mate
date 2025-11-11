@@ -1,0 +1,25 @@
+{
+  "quizzes": {
+    "html": [
+      {"q":"What does HTML stand for?","options":["Hyper Trainer Marking Language","Hyper Text Markup Language","Hyper Text Marketing Language","High Text Markup Language"],"answer":1},
+      {"q":"Which tag creates a hyperlink?","options":["<href>","<link>","<a>","<url>"],"answer":2},
+      {"q":"Which tag is used for the largest heading?","options":["<h6>","<head>","<h1>","<header>"],"answer":2},
+      {"q":"Which attribute sets image source?","options":["href","src","alt","link"],"answer":1},
+      {"q":"Which is a semantic tag?","options":["<div>","<span>","<article>","<b>"],"answer":2}
+    ],
+    "css": [
+      {"q":"What does CSS stand for?","options":["Counter Style Sheets","Cascading Style Sheets","Computer Style Sheets","Creative Style Syntax"],"answer":1},
+      {"q":"Which property changes text color?","options":["font-color","text-color","color","fgcolor"],"answer":2},
+      {"q":"Which layout is one-dimensional?","options":["Grid","Flexbox","Float","Position"],"answer":1},
+      {"q":"Which unit is relative to root font size?","options":["em","px","rem","%"],"answer":2},
+      {"q":"Which selector selects by id?","options":[".id","#id","id{}","*id"],"answer":1}
+    ],
+    "javascript": [
+      {"q":"Which keyword declares a constant?","options":["var","let","const","static"],"answer":2},
+      {"q":"typeof null is?","options":["null","object","undefined","number"],"answer":1},
+      {"q":"Which adds a handler to a button?","options":["btn.addEventListener('click', fn)","onClick=fn","btn.on('click',fn)","btn.click(fn)"],"answer":0},
+      {"q":"Which converts string to int?","options":["Number.parseInt","parseInt","int()","toInt()"],"answer":1},
+      {"q":"Which compares values and type?","options":["==","===","=","!=="],"answer":1}
+    ]
+  }
+}

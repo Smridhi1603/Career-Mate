@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Career Mate : Course</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Main Style -->
+  <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: #f9f9f9;
+    }
+
+    pre {
+      background: #f8f9fa;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .page-header {
+      background: royalblue;
+    }
+
+    .sidebar-box {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+
+<body>
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <p class="m-0 fw-bold" style="font-size: 25px;">Career<span
+                    style="color: royalblue;">Mate</span></p>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="courses.html" class="nav-item nav-link">Courses</a>
+                <a href="dashboard.html" class="nav-item nav-link">Dashboard</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="team.html" class="dropdown-item">Our Team</a>
+
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="login.html" class="nav-item nav-link">Login</a>
+                <a href="signup.html" class="nav-item nav-link">Signup</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+  <!-- Header -->
+  <div class="container-fluid py-5 mb-5 page-header text-center text-white">
+    <h1 id="course-title" class="display-3">Loading...</h1>
+    <p id="course-subtitle"></p>
+  </div>
+
+  <!-- Course Content -->
+  <div class="container py-5">
+    <div class="row g-4">
+      <!-- Main Course Content -->
+      <div class="col-lg-8" id="main-content"></div>
+
+      <!-- Sidebar -->
+      <div class="col-lg-4">
+        <div class="sidebar-box" id="sidebar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="container-fluid bg-dark text-light footer pt-5 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 text-start">
+          <p>&copy; <a href="#" class="text-light">Career Mate</a>, All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/navbar.js"></script>
+
+  <!-- Dynamic Course Loader -->
+  <script>
+    async function loadCourse() {
+      const params = new URLSearchParams(window.location.search);
+      const courseId = params.get("id");
+      if (!courseId) {
+        document.getElementById("course-title").innerText = "Course Not Found";
+        return;
+      }
+
+      try {
+        const res = await fetch("assets/courses.json");
+        const data = await res.json();
+        const course = data.courses.find(c => c.id === courseId);
+
+        if (!course) {
+          document.getElementById("course-title").innerText = "Course Not Found";
+          return;
+        }
+
+        // Header
+        document.getElementById("course-title").innerText = course.title;
+        document.getElementById("course-subtitle").innerText = course.subtitle || '';
+
+        // Main Content (overview only - no video here)
+        const main = document.getElementById("main-content");
+        main.innerHTML = "";
+
+        (course.mainContent || []).forEach(block => {
+          if (block.tag === "ul") {
+            const ul = document.createElement("ul");
+            (block.items || []).forEach(item => {
+              const li = document.createElement("li");
+              li.innerHTML = item;
+              ul.appendChild(li);
+            });
+            main.appendChild(ul);
+          } else {
+            if (block.tag === "div" && (block.content || '').includes("jdoodle")) {
+              // Inject JDoodle container
+              const wrapper = document.createElement("div");
+              wrapper.innerHTML = block.content;
+              main.appendChild(wrapper);
+
+              // Re-inject script properly (browser ignores scripts inside innerHTML)
+              const script = document.createElement("script");
+              script.src = "https://www.jdoodle.com/assets/jdoodle-pym.min.js";
+              script.async = true;
+              document.body.appendChild(script);
+            } else if (block.tag === "ul") {
+              const ul = document.createElement("ul");
+              (block.items || []).forEach(item => {
+                const li = document.createElement("li");
+                li.innerHTML = item;
+                ul.appendChild(li);
+              });
+              main.appendChild(ul);
+            } else {
+              const el = document.createElement(block.tag || 'p');
+              el.innerHTML = block.content || '';
+              main.appendChild(el);
+            }
+
+          }
+        });
+
+        // Sidebar
+        const sidebar = document.getElementById("sidebar");
+        
+        // Check enrollment status using MongoDB API
+        let ctaButton = '';
+        try {
+          // Check if user is logged in
+          const authResponse = await fetch('/api/auth/me');
+          const authData = await authResponse.json();
+          
+          if (!authData.loggedIn) {
+            ctaButton = '<a href="login.html" class="btn btn-primary w-100">Login to Enroll</a>';
+          } else {
+            // Check if enrolled using MongoDB API
+            const enrolledResponse = await fetch('/api/courses/enrolled');
+            const enrolledData = await enrolledResponse.json();
+            const enrolledCourses = enrolledData.enrolledCourses || [];
+            
+            if (enrolledCourses.includes(courseId)) {
+              ctaButton = `<a href="learn.html?id=${courseId}" class="btn btn-success w-100"><i class=\"fa fa-play me-2\"></i>Continue Learning</a>`;
+            } else {
+              ctaButton = `<button onclick="handleEnrollment('${courseId}')" class="btn btn-primary w-100">Enroll Now</button>`;
+            }
+          }
+        } catch (error) {
+          console.error('Error checking enrollment status:', error);
+          ctaButton = '<a href="login.html" class="btn btn-primary w-100">Login to Enroll</a>';
+        }
+        
+        const includesList = (course.sidebar?.includes || []).map(i => `<li>${i}</li>`).join("");
+        sidebar.innerHTML = `
+          <h5 class="fw-bold mb-3">Course Details</h5>
+          <div id="ratingSummary" class="mb-2 small text-muted">Rating: —</div>
+          <p><strong>Level:</strong> ${course.sidebar?.level || 'Beginner'}</p>
+          <p><strong>Instructor:</strong> ${course.sidebar?.instructor || 'Instructor'}</p>
+          <p><strong>Includes:</strong></p>
+          <ul>${includesList}</ul>
+          ${ctaButton}
+          <hr/>
+          <h6 class="fw-bold">Leave a Review</h6>
+          <div class="mb-2">
+            <label for="reviewRating" class="form-label small">Your Rating</label>
+            <select id="reviewRating" class="form-select form-select-sm" style="max-width:140px">
+              <option value="5">★★★★★ (5 - Excellent)</option>
+              <option value="4">★★★★☆ (4 - Very Good)</option>
+              <option value="3">★★★☆☆ (3 - Good)</option>
+              <option value="2">★★☆☆☆ (2 - Fair)</option>
+              <option value="1">★☆☆☆☆ (1 - Poor)</option>
+            </select>
+          </div>
+          <div class="mb-2">
+            <label for="reviewComment" class="form-label small">Your Review (Optional)</label>
+            <textarea id="reviewComment" class="form-control" rows="3" placeholder="Share your experience with this course..."></textarea>
+          </div>
+          <button id="submitReviewBtn" class="btn btn-sm btn-primary">Submit Review</button>
+          <hr/>
+          <div id="reviewsList"></div>
+        `;
+
+        // Load rating summary and reviews
+        try {
+          const sum = await fetch(`/api/reviews/${courseId}/summary`).then(r=>r.json());
+          const rs = document.getElementById('ratingSummary');
+          if (sum && (sum.count||0) > 0) rs.textContent = `Rating: ${sum.avg} / 5 (${sum.count} reviews)`;
+          const list = await fetch(`/api/reviews/${courseId}`).then(r=>r.json());
+          const reviewsEl = document.getElementById('reviewsList');
+          reviewsEl.innerHTML = (list.reviews||[]).slice(0,5).map(rv => `<div class="mb-2 p-2 bg-light rounded"><strong>${rv.username}</strong> • ${'★'.repeat(rv.rating)}${'☆'.repeat(5-rv.rating)}<br/><small class="text-muted">${rv.comment||'No comment provided'}</small></div>`).join('') || '<em class="text-muted">No reviews yet. Be the first to review!</em>';
+        } catch(_){ }
+
+        // Submit review
+        document.getElementById('submitReviewBtn').addEventListener('click', async ()=>{
+          const btn = document.getElementById('submitReviewBtn');
+          const originalText = btn.textContent;
+          
+          try {
+            // Check if user is logged in
+            const authCheck = await fetch('/api/auth/me').then(r=>r.json());
+            if (!authCheck.loggedIn) {
+              alert('⚠️ Please login to submit a review.');
+              window.location.href = 'login.html';
+              return;
+            }
+
+            // Disable button to prevent double submission
+            btn.disabled = true;
+            btn.textContent = 'Submitting...';
+
+            const rating = Number(document.getElementById('reviewRating').value);
+            const comment = document.getElementById('reviewComment').value.trim();
+
+            if (!rating || rating < 1 || rating > 5) {
+              alert('Please select a valid rating.');
+              btn.disabled = false;
+              btn.textContent = originalText;
+              return;
+            }
+
+            const resp = await fetch('/api/reviews', { 
+              method:'POST', 
+              headers:{'Content-Type':'application/json'}, 
+              body: JSON.stringify({ courseId, rating, comment })
+            });
+            
+            const data = await resp.json();
+            
+            if (!resp.ok) {
+              if (resp.status === 403) {
+                alert('⚠️ You must be enrolled in this course to leave a review.\n\nPlease enroll first, then come back to review!');
+              } else if (resp.status === 401) {
+                alert('⚠️ Please login to submit a review.');
+                window.location.href = 'login.html';
+              } else {
+                alert(data.message || 'Failed to submit review. Please try again.');
+              }
+              btn.disabled = false;
+              btn.textContent = originalText;
+              return;
+            }
+
+            alert('✅ Thank you for your review!\n\nYour feedback helps other learners make informed decisions.');
+            location.reload();
+            
+          } catch (error) {
+            console.error('Review submission error:', error);
+            alert('❌ Error submitting review. Please check your connection and try again.');
+            btn.disabled = false;
+            btn.textContent = originalText;
+          }
+        });
+
+      } catch (err) {
+        console.error("Error loading course:", err);
+        document.getElementById("course-title").innerText = "Error loading course";
+      }
+    }
+
+    loadCourse();
+  </script>
+  
+  <!-- Navbar Management -->
+  <script src="js/navbar.js"></script>
+  
+  <!-- Enrollment Management -->
+  <script src="js/enrollment.js"></script>
+    
+</body>
+
+</html>
